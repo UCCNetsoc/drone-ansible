@@ -1,3 +1,10 @@
+FROM golang
+
+WORKDIR /app
+COPY . .
+
+RUN GOOS=linux GOARCH=amd64 CGO_ENABLED=0 GO111MODULE=on go build -v -a -tags netgo -o release/linux/amd64/drone-ansible
+
 FROM plugins/base:linux-amd64
 
 LABEL maintainer="Drone.IO Community <drone-dev@googlegroups.com>" \
