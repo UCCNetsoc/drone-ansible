@@ -16,7 +16,6 @@ steps:
         - "${DRONE_COMMIT_SHA:0:7}"
         - latest
       repo: uccnetsoc/drone-ansible
-      context: .
       dockerfile: docker/Dockerfile.linux.amd64
       registry: docker.io
       custom_dns: [1.1.1.1]
