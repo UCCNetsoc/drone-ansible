@@ -1,4 +1,4 @@
-FROM golang
+FROM golang AS build
 
 WORKDIR /app
 COPY . .
@@ -17,5 +17,5 @@ RUN apk add --no-cache gcc bash git jq curl rsync openssh-client sshpass py3-pip
   pip3 install ansible==2.10.0 boto3==1.13.10 && \
   apk del --no-cache python3-dev libffi-dev libressl-dev build-base
 
-ADD release/linux/amd64/drone-ansible /bin/
+COPY --from=build /app/release/linux/amd64/drone-ansible /bin/
 ENTRYPOINT ["/bin/drone-ansible"]
