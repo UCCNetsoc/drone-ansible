@@ -13,8 +13,8 @@ LABEL maintainer="Drone.IO Community <drone-dev@googlegroups.com>" \
   org.label-schema.schema-version="1.0"
 
 RUN apk add --no-cache lxc lxc-dev automake libc-dev gcc bash git autoconf libtool jq curl rsync openssh-client sshpass py-requests py-paramiko python2-dev libffi-dev libressl-dev libressl build-base && \
-  pip3 install -U pip && \
-  pip3 install ansible==2.10.0 boto3==1.13.10
+  pip install -U pip && \
+  pip install ansible==2.10.0 boto3==1.13.10
   
 COPY --from=build /app/release/linux/amd64/drone-ansible /bin/
 
