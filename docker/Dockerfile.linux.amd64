@@ -22,6 +22,8 @@ COPY --from=build /app/requirements.txt /requirements.txt
 
 RUN cp /usr/bin/python2 /usr/bin/python3
 
+RUN unlink /usr/bin/python
+
 RUN ln -s /usr/bin/python2 /usr/bin/python
 
 RUN cp /usr/bin/pip /usr/bin/pip3
