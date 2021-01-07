@@ -12,7 +12,7 @@ LABEL maintainer="Drone.IO Community <drone-dev@googlegroups.com>" \
   org.label-schema.vendor="Drone.IO Community" \
   org.label-schema.schema-version="1.0"
 
-RUN apk add --no-cache lxc lxc-dev automake libc-dev gcc bash git autoconf libtool jq curl rsync openssh-client sshpass py-requests py-paramiko python2-dev libffi-dev libressl-dev libressl build-base && \
+RUN apk add --no-cache lxc lxc-dev automake libc-dev gcc bash git autoconf libtool jq curl rsync openssh-client sshpass py-pip py-requests py-paramiko python2-dev libffi-dev libressl-dev libressl build-base && \
   pip install -U pip && \
   pip install ansible==2.10.0 boto3==1.13.10
   
