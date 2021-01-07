@@ -24,4 +24,6 @@ RUN pip install -r /requirements.txt
 
 RUN cp /usr/bin/python2 /usr/bin/python3
 
+RUN cp /usr/bin/pip /usr/bin/pip3
+
 ENTRYPOINT ["/bin/drone-ansible"]
